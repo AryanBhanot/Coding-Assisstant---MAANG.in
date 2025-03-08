@@ -16,7 +16,7 @@
         "https://maang.in/problems/*"
       ],
       "exclude_matches": [
-        "https://maang.in/problems"
+        "https://maang.in/problems/"
       ],
       "js": [
         "content.js"
