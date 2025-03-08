@@ -1,0 +1,54 @@
+{
+  "manifest_version": 3,
+  "name": "Extensional Crisis",
+  "version": "0.3",
+  "author": "First Last",
+  "description": "Because you totally needed another Chrome extension in your life. Adds AI-powered chaos to Maang Problems.",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://maang.in/problems/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://maang.in/problems/*"
+      ],
+      "exclude_matches": [
+        "https://maang.in/problems"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "styles.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["assets/ext-icon.png", "styles.css"],
+      "matches": ["https://maang.in/problems/*"]
+    }
+  ],
+  "action": {
+    "default_icon": {
+      "16": "assets/ext-icon.png",
+      "24": "assets/ext-icon.png",
+      "32": "assets/ext-icon.png"
+    },
+    "default_popup": "popup.html",
+    "default_title": "Your friendly existential crisis."
+  },
+  "options_page": "options.html",
+  "icons": {
+    "16": "assets/ext-icon.png",
+    "48": "assets/ext-icon.png",
+    "128": "assets/ext-icon.png"
+  }
+}
